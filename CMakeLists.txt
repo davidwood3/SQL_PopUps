@@ -9,6 +9,8 @@ find_package(Qt6 6.2 COMPONENTS Quick REQUIRED)
 
 qt_add_executable(appSQL_PopUps
     main.cpp
+    test.h
+    test.cpp
 )
 
 qt_add_qml_module(appSQL_PopUps

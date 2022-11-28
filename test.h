@@ -1,0 +1,24 @@
+#ifndef TEST_H
+#define TEST_H
+
+#include <QObject>
+#include <QDebug>
+
+
+class Test : public QObject
+{
+    Q_OBJECT
+public:
+    explicit Test(QObject *parent = nullptr);
+
+    // Normal function
+    int number();
+
+signals:
+
+public slots:
+    void bark(QString name);
+
+};
+
+#endif // TEST_H

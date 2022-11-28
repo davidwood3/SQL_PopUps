@@ -13,7 +13,7 @@ Window {
         id: popup
         anchors.centerIn: parent
         width: 200
-        height: 200
+        height: 334
         modal: true
         focus: true
         closePolicy: Popup.CloseOnEscape | Popup.CloseOnPressOutsideParent
@@ -37,7 +37,10 @@ Window {
             Button {
                 id: closeButton
                 text: "Close"
-                onClicked: popup.visible = false
+                onClicked: {
+                    popup.visible = false
+                    // Call a C++ slot
+                }
             }
         }
     }
@@ -62,7 +65,7 @@ Window {
             rotation: 1
             anchors.topMargin: 10
             anchors.leftMargin: 7
-        }
+
 
         CheckBox {
             id: chkButter
@@ -100,7 +103,12 @@ Window {
             width: 88
             height: 40
             text: qsTr("Save")
-            onClicked: popup.visible = true
+            onClicked: {
+                popup.visible = true
+                testing.bark(chkSyrup.text.toString());
+
+            }
         }
     }
+}
 }
